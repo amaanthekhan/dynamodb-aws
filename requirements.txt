@@ -1,0 +1,5 @@
+boto3==1.28.70
+Flask==2.2.5
+flask_wtf==1.1.1
+WTForms==3.0.1
+Gunicorn

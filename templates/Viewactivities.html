@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Activities</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        li:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
+        }
+
+        li::before {
+            content: '\2022'; /* Add a bullet point before each list item */
+            margin-right: 10px;
+            font-size: 24px;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Fitness Activities</h1>
+    <ul>
+        {% for item in items %}
+            <li>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <strong>Activity Type:</strong> {{ item.ActivityType }}<br>
+                            <strong>Duration:</strong> {{ item.Duration }} seconds<br>
+                            <strong>Distance:</strong> {{ item.Distance }} meters<br>
+                            <strong>Calories Burned:</strong> {{ item.CaloriesBurned }}<br>
+                            <strong>Timestamp:</strong> {{ item.Timestamp }}<br>
+                            <!-- Add other relevant data here, e.g., GPS location -->
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

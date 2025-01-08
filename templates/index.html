@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fitness Tracker</title>
+    <!-- Include Bootstrap CSS from a CDN (Content Delivery Network) -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+        }
+
+        h1 a {
+            text-decoration: none;
+            color: rgb(18, 205, 24);
+        }
+
+        p {
+            font-size: 18px;
+            margin: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            background-color: #f5f5f5;
+            padding: 10px 20px;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover {
+            background-color: #4CAF50;
+            color: rgb(45, 5, 189);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><a href="{{ url_for('index') }}">Welcome to the Fitness Tracker</a></h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Record Activity</h2>
+                        <p class="card-text">Record your fitness activities here.</p>
+                        <a href="{{ url_for('record_activity') }}" class="btn btn-success">Record Activity</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">View Activities</h2>
+                        <p class="card-text">View your recorded fitness activities.</p>
+                        <a href="{{ url_for('view_activities') }}" class="btn btn-primary">View Activities</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

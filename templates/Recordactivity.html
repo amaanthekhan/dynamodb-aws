@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Record Activity</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s;
+            transition: box-shadow 0.3s; /* Add a hover effect */
+        }
+
+        form:hover {
+            box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3); /* Adjust the shadow on hover */
+        }
+
+        form label, form input {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Add a color change effect on hover */
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #45c518; /* Adjust the background color on hover */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Record Activity</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <label for="activity_type">Activity Type:</label>
+        {{ form.activity_type(placeholder="Running") }}
+        <br>
+        <label for="duration">Duration (seconds):</label>
+        {{ form.duration(placeholder="3600") }}
+        <br>
+        <label for="distance">Distance (meters):</label>
+        {{ form.distance(placeholder="5000") }}
+        <br>
+        <label for="calories_burned">Calories Burned:</label>
+        {{ form.calories_burned(placeholder="400") }}
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+
